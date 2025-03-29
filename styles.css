@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --card-background: #21464e;
+  --background: #255059;
+  --guess-bg: #f2b705;
+  --buttons-bg: #86572e;
+}
+
+html,
+body {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  width: 100%;
+  height: 10vh;
+}
+
+.container {
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100vh;
+}
+
+.top-header {
+  color: #ffffff;
+}
+
+.game-box {
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--card-background);
+  border: 1px solid rgba(0, 0, 0, 0.664);
+  border-radius: 10px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+
+.owl-pic {
+  position: absolute;
+  top: 70px;
+  left: -70px;
+  max-width: 200px;
+}
+
+.left-bar {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chances{
+    color: #e4c465f9;
+    font-size: 20px;
+}
+
+#chance-remain{
+    font-size: 28px;
+}
+
+.guess-header {
+  color: #ffffff;
+}
+
+.guess-number {
+  max-width: 200px;
+  background-color: var(--guess-bg);
+  height: 50px;
+  border: none;
+  outline: none;
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  font-size: 24px;
+  color: var(--buttons-bg);
+}
+
+.right-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.tags {
+  background-color: var(--buttons-bg);
+  border: 1px solid rgba(0, 0, 0, 0.772);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 24px;
+  min-width: 180px;
+  color: var(--guess-bg);
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  text-align: center;
+}
+
+.fire-color {
+  background-color: #18864b;
+}
+
+.result-header {
+  color: #ffffff;
+}
+
+.result-text {
+  height: 50px;
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  font-size: 24px;
+  color: var(--guess-bg);
+}
+
+.error-handling{
+  display: none;
+}
