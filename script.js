@@ -8,26 +8,36 @@ const rightBar = document.getElementById("right-bar");
 const chanceRemain = document.getElementById("chance-remain");
 const higherNo = document.getElementById("higher-no");
 const lowerNo = document.getElementById("lower-no");
-const errorHandling = document.getElementById("error-handling")
+const errorHandling = document.getElementById("error-handling");
 
 const randomNumber = Math.floor(Math.random() * 100) + 1;
 console.log(randomNumber);
 let guessNumber = 10;
 
 maxLower = null;
-minHigher = null
+minHigher = null;
 
 numberInput.addEventListener("keyup", (event) => {
   if (event.code === "Enter") {
-    errorHandling.classList.add("error-handling")
+    errorHandling.classList.add("error-handling");
+    errorHandling.textContent = "";
     const userInput = event.target.value.trim();
-    if(userInput==="" || isNaN(userInput)){
-      errorHandling.classList.remove("error-handling")
-      event.target.value = ""
-      return
+    if (userInput === "" || isNaN(userInput)) {
+      errorHandling.classList.remove("error-handling");
+      errorHandling.textContent = "Please add a number";
+      event.target.value = "";
+      return;
     }
 
     const userGuess = +event.target.value;
+
+    if (userGuess < 1 || userGuess > 100) {
+      errorHandling.classList.remove("error-handling");
+      errorHandling.textContent =
+        "your number should be lower than 100 & higher than 1.";
+      event.target.value = "";
+      return;
+    }
 
     if (guessNumber === 1) {
       leftBar.innerHTML = `
@@ -54,8 +64,8 @@ numberInput.addEventListener("keyup", (event) => {
     if (randomNumber > userGuess) {
       lower.classList.add("fire-color");
       higher.classList.remove("fire-color");
-      
-      if(maxLower === null || userGuess > maxLower){
+
+      if (maxLower === null || userGuess > maxLower) {
         maxLower = userGuess;
       }
       lowerNo.innerHTML = maxLower;
@@ -65,13 +75,13 @@ numberInput.addEventListener("keyup", (event) => {
       higher.classList.add("fire-color");
       lower.classList.remove("fire-color");
 
-      if(minHigher === null || userGuess < minHigher){
+      if (minHigher === null || userGuess < minHigher) {
         minHigher = userGuess;
       }
       higherNo.innerHTML = minHigher;
     }
     guessNumber--;
     chanceRemain.innerHTML = guessNumber;
-    event.target.value=""
+    event.target.value = "";
   }
 });
