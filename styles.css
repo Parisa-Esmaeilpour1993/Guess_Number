@@ -59,13 +59,19 @@ body {
   gap: 16px;
 }
 
-.chances{
-    color: #e4c465f9;
-    font-size: 20px;
+.input-section {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
-#chance-remain{
-    font-size: 28px;
+.chances {
+  color: #e4c465f9;
+  font-size: 20px;
+}
+
+#chance-remain {
+  font-size: 28px;
 }
 
 .guess-header {
@@ -73,7 +79,7 @@ body {
 }
 
 .guess-number {
-  max-width: 200px;
+  max-width: 130px;
   background-color: var(--guess-bg);
   height: 50px;
   border: none;
@@ -81,6 +87,12 @@ body {
   font-family: "Edu AU VIC WA NT Pre", cursive;
   font-size: 24px;
   color: var(--buttons-bg);
+}
+
+.guess-submit {
+  background-color: transparent;
+  height: 50px;
+  padding: 10px;
 }
 
 .right-bar {
@@ -117,6 +129,6 @@ body {
   color: var(--guess-bg);
 }
 
-.error-handling{
+.error-handling {
   display: none;
 }
